@@ -1,4 +1,4 @@
-# hw1_digital_patology
+# hw1_digital_pathology
 
 ## Данные, используемые для обучения и тестирования 
 
