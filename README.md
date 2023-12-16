@@ -25,7 +25,7 @@ def save(self, name: str):
         self.model.save(f'{name}.h5')
 ```
 
-## Загрузка модели
+## Загрузка весов модели
 ```python
 def load(self, name: str):
         name_to_id_dict = {
