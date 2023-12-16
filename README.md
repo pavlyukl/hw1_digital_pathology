@@ -1,5 +1,7 @@
 # hw1_digital_pathology
 
+В работе использовалась предобученная модель DenseNet со 169 слоями, которая показывает наилучшие результаты при классификации клеточного фенотипа(https://www.hindawi.com/journals/cin/2022/6895833/).
+
 ## Данные для обучения и тестирования модели
 
 ```python
@@ -11,6 +13,25 @@ DATASETS_LINKS = {
     'test_small': '1wbRsog0n7uGlHIPGLhyN-PMeT2kdQ2lI',
     'test_tiny': '1viiB0s041CNsAK4itvX8PnYthJ-MDnQc'
 }
+```
+
+## Сохранение модели
+```python
+def save(self, name: str):
+        self.model.save(f'{name}.h5')
+```
+
+## Загрузка модели
+```python
+def load(self, name: str):
+        name_to_id_dict = {
+            'best_last':'1-3Ov6JW87ho9Zfk7KKc5NeFgINLMfxHe',
+            'best_small':'1-1vjd0EnRRTKug_ptDAyJhW_gDpJF6aA',
+            'best_tiny':'1EEgqjrlZCfwU-f38867n0Gcst521ji-8'
+        }
+        link = f"https://drive.google.com/uc?export=download&id={name_to_id_dict.get(name, '')}"
+        gdown.download(link, f'{name}.h5', quiet=False)
+        self.model.load_weights(f'{name}.h5')
 ```
 
 ## Результаты
