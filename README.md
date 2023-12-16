@@ -1,6 +1,6 @@
 # hw1_digital_pathology
 
-## Данные, используемые для обучения и тестирования модели
+## Данные для обучения и тестирования модели
 
 ```python
 DATASETS_LINKS = {
@@ -17,5 +17,5 @@ DATASETS_LINKS = {
 ```python
 10% of test: accuracy 0.9844
 test: 0.9324
-test-tiny: 0.9556:
+test-tiny: 0.9556
 ```
